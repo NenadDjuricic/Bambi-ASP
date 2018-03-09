@@ -238,6 +238,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="slike\christmas-2919724_640.png" />
     <Content Include="slike\deca.jpg" />
     <Content Include="slike\freezing-earth-2376303_1920.jpg" />
     <Content Include="slike\kids-2985782_1920.jpg" />
@@ -294,6 +295,7 @@
     <Content Include="Views\Categories\Details.cshtml" />
     <Content Include="Views\Categories\Edit.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Home\oNama.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

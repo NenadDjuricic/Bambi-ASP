@@ -16,9 +16,9 @@ namespace TestDataBase.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult oNama()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "O nama";
 
             return View();
         }
