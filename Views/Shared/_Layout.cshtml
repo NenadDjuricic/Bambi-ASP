@@ -29,9 +29,12 @@
                 </nav>
 
             </div>
+            <div class="col-8 col-sm-4">
+                @Html.Partial("_LoginPartial")
+            </div>
         </div>
     </header>
-    <div class="navbar navbar-inverse">
+    <div class="main-nav navbar navbar-toggleable-sm navbar-light navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -39,27 +42,59 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Restoran GoodFood", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse col-lg-12">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Pocetna", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Kategorija", "Index", "Categories")</li>
-                    <li>@Html.ActionLink("Proizvodi", "Index", "Products")</li>
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="nav nav-justified flex-column flex-sm-row">
+                    <li>@Html.ActionLink("Pocetna", "Index", "Home", new { @class = "nav-item nav-link ff" })</li>
+                    <li>@Html.ActionLink("O nama", "Index", "#", new { @class = "nav-item nav-link ff" })</li>
+                    <li>@Html.ActionLink("Radno vreme", "Index", "#", new { @class = "nav-item nav-link ff" })</li>
+                    <li>@Html.ActionLink("Galerija", "Index", "#", new { @class = "nav-item nav-link ff" })</li>
+                    <li>@Html.ActionLink("Proizvodi", "Index", "Products", new { @class = "nav-item nav-link ff" })</li>
 
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
+    <footer class="site-footer pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="text-uppercase text-center pb-4">O nama</h3>
+                    <p class="text-justify">Vrtić Bambi je privatna predškolska ustanova, usmerena ka pružanju nege i podršci pri obrazovanju i vaspitanju dece od jaslica do predškolskog uzrasta. </p>
+                </div>
+                <div class="col-md-4 pb-4 pb-md-0">
+                    <h3 class="text-uppercase text-center pb-4">Radno vreme</h3>
+                    <p class="text-center mb-0">Pon-Pet: 9:00-19:00 </p>
+                    <p class="text-center mb-0">Sub-Ned: Zatvoreno </p>
+                </div>
+                <div class="col-md-4 pb-4 pb-md-0">
+                    <h3 class="text-uppercase text-center pb-4">Kontakt</h3>
+                    <p class="mb-0 text-center">Bajdina 9G</p>
+                    <p class="mb-0 text-center">11000 Beograd<br>Zvezdara</p>
+                    <div class="social-nav">
+                        <nav class="socials text-left  pt-3">
+                            <ul class="m-0 p-0 text-right">
+                                <li><a href="http://facebook.com"><span class="sr-only">Facebook</span></a></li>
+                                <li><a href="http://instagram.com"><span class="sr-only">Instagram</span></a></li>
+                                <li><a href="http://twitter.com"><span class="sr-only">Twitter</span></a>
+                                <li></li>
+                                <li> <a href="http://youtube.com"><span class="sr-only">YouTube</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <hr class="w-100">
+                <p class="copyright text-center w-100">Vrtic Bambi 2018</p>
+            </div>
 
+        </div>
+
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

@@ -31,6 +31,13 @@ h3 span{
     background-size: cover;
 }
 /** navigacija **/
+.ff:hover{
+    background-color: #ffffff !important;
+}
+.navbar{
+    min-height: 0 !important;
+    border: 0px !important;
+}
 .navigation{
     background-color: #89bef0;
     border-bottom: 2px solid black ;
@@ -51,10 +58,6 @@ nav.main-nav .nav-link{
     font-size: 1.2rem;
     color: #282828;
     font-family: 'Raleway', sans-serif; 
-}
-nav.main-nav .nav-link:hover{
-  background-color: #bdd1f7;
-  border-radius: 10px;
 }
 nav.main-nav .nav-item {
     transition: background-color .5s ease;
@@ -212,7 +215,7 @@ text-decoration: none;
     }
 /** futer **/
 footer{
-       background-image:url(../img/freezing-earth-2376303_1920.jpg);
+       background-image:url(../slike/freezing-earth-2376303_1920.jpg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -404,4 +407,11 @@ form .form-control {
     margin: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
+}
+/*------------------------------
+      regostracija log in
+
+------------------------------*/
+#loginLink , #registerLink{
+    color: black ;
 }
