@@ -238,8 +238,13 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="slike\deca.jpg" />
     <Content Include="slike\freezing-earth-2376303_1920.jpg" />
+    <Content Include="slike\kids-2985782_1920.jpg" />
     <Content Include="slike\logo-bambi.png" />
+    <Content Include="slike\mobilni.png" />
+    <Content Include="slike\slikaZaParalax.jpg" />
+    <Content Include="slike\team-2444978_1920.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
