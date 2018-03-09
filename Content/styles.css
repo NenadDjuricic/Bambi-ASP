@@ -1,0 +1,407 @@
+body{
+    background-color: #f8f8f8;
+    
+}
+html{
+    font-size: 95%;
+}
+h2{
+    font-size: 2.4rem;
+}
+
+h2 span{
+    font-size: 4rem;
+}
+h2,h3{
+     color: black;
+     font-family: 'Lato' sans-serif;
+    line-height: 2.4rem;
+    
+}
+h2 span,
+h3 span{
+    font-family: 'Italianno', cursive;
+    display: block;
+    color: #e082a8;
+}
+.site-header{
+    background-image:url(../slike/freezing-earth-2376303_1920.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+/** navigacija **/
+.navigation{
+    background-color: #89bef0;
+    border-bottom: 2px solid black ;
+}
+.bg-faded{
+     background-color: transparent;
+}
+.navbar-toggler{
+    background-color: white;
+}
+.navbar-brand{
+    color:white!important;
+}
+.flex-sm-row{
+    width: 100%;
+}
+nav.main-nav .nav-link{
+    font-size: 1.2rem;
+    color: #282828;
+    font-family: 'Raleway', sans-serif; 
+}
+nav.main-nav .nav-link:hover{
+  background-color: #bdd1f7;
+  border-radius: 10px;
+}
+nav.main-nav .nav-item {
+    transition: background-color .5s ease;
+}
+/** Slider **/
+.carousel .carousel-caption h4{
+     font-family: 'Raleway', sans-serif; 
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.carousel-inner > .carousel-item > img {
+  width:100%;
+  height:565px;
+}
+.bezPadinga{
+   padding-left: 0px;
+    padding-right: 0px;
+}
+/** drustvene mreze**/
+.socials ul{
+    list-style: none;
+}
+.socials ul li{
+    position: relative;
+    display: inline-block;
+    color: #89bef0;
+}
+.socials ul li a::before{
+    font-family: 'FontAwesome';
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 .4rem;
+    content: '\f08e';
+    color:#e082a8;
+    font-size: 2rem;
+    
+}
+.socials ul li a[href*="http://facebook.com"]::before{
+    content: '\f09a';
+}
+.socials ul li a[href*="http://instagram.com"]:before{
+    content: '\f16d';
+}
+.socials ul li a[href*="http://twitter.com"]:before{
+    content: '\f081';
+}
+.socials ul li a[href*="http://youtube.com"]:before{
+    content: '\f16a';
+}
+/** dobro dosli na sajt **/
+.welcome p{
+    font-size: 1.4rem;
+    color: #979797;
+    font-family: 'Lato' sans-serif;
+}
+
+/** Image links **/
+.image-links img{
+    border: 5px solid lightgrey;
+    -webkit-transition: transform .3s ease;
+    -ms-transition: transform .3s ease;
+     transition: transform .3s ease;
+}
+.image-links img:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(01.1);
+}
+.image-info{
+    background-color: ghostwhite;
+    margin-top: -50px; 
+    border: 0.1px solid grey;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+.image-info .btn-success {
+    background-color: #e082a8;
+    border: none;
+    border-radius: 0px;
+    
+}
+.image-info .btn-success:hover {
+    background-color: #ca5b88;
+}
+/** vreme **/
+.business-hours{
+    background-color:#bdd1f7;
+    color: black;
+}
+.business-hours h2{
+    color: #e082a8;
+}
+
+.table{
+    border: 2px solid #e082a8;
+}
+.table td,
+.table thead th{
+    border:none;
+}
+.table tbody tr td {
+    padding: .5rem;
+}
+.table-danger,
+.table-danger:hover{
+    background-color: #ca5b88;
+    
+}
+/** prodavnica **/
+.ponuda .card{
+    border:none;
+    
+}
+.ponuda .card h3{
+    font-size: 1.3rem;
+    color:#e082a8;
+}
+.ponuda .card p{
+    font-size: 0.9rem;
+}
+.ponuda .card p.cena{
+    font-size: 1.5rem;
+    font-family: 'Lato', sans-serif;
+    color: #979797;
+}
+.ponuda .card a{
+color: #000;
+}
+.ponuda .card a:hover{
+text-decoration: none;
+}
+/** video nadzor **/
+.video-nadzor{
+    background-image: url(../img/mobilni.png);
+    background-repeat: no-repeat;
+    background-position: 80%;
+    background-size: auto;
+    background-color: #bdd1f7;
+}
+.video-nadzor h3{
+    font-size: 2rem;
+    color: black;
+    line-height: 4rem;
+    
+}
+.video-nadzor .btn-primary {
+    background-color: #e082a8;
+    border: 1px solid grey;
+    border-radius: 25px ;
+    padding: 1rem 2rem;
+    font-family: 'Raleway', sans-serif;
+    }
+.video-nadzor .btn-primary:hover {
+    background-color:  #ca5b88;
+    }
+/** futer **/
+footer{
+       background-image:url(../img/freezing-earth-2376303_1920.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.site-footer p.copyright{
+    font-family: 'Lato', sans-serif;
+    color: #979797;
+}
+footer h3{
+    font-size: 1.4rem;
+}
+/** ostale stranice **/
+/** o nama **/
+.hero{
+  position: relative;
+  background-color: lightblue;
+}
+.hero h2{
+   color: black;
+     font-family: 'Open Sans', sans-serif;
+}
+.slikaSnesko{
+    max-height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+#canvas {
+    width: 100%;
+    height: 900px;
+    position: absolute;
+
+}
+.hero img{
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.hero:active img {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.drvo{
+    width: 300px;
+    height: 600px;
+    position: left;
+}
+.oNama{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14pt;
+    font-weight: 300;
+    white-space: pre-wrap;
+}
+/** galerija **/
+.container.gallery-container {
+    background-color: #fff;
+    color: #35373a;
+    min-height: 100vh;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.gallery-container h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.gallery-container p.page-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 25px auto;
+    color: #888;
+    font-size: 18px;
+}
+
+.gallery {
+    padding: 40px;
+}
+
+.gallery .lightbox img {
+    width: 100%;
+    margin-bottom: 30px;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+
+.gallery .lightbox img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.gallery img {
+    border-radius: 4px;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+
+@media(max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .container.gallery-container {
+        border-radius: 0;
+    }
+}
+/** kontakt forma **/
+.btn-grey {
+    border-color: darkgray;
+    background-color: gainsboro;
+    border-radius: 50px;
+    border: 6px;
+    opacity: 0.9;
+}
+
+.btn-grey:hover,
+.btn-grey:focus {
+    background-color: gray;
+    color: lightblue;
+}
+.btn-general {
+    border-color: darkgrey;
+    border-width: 2px;
+    border-radius: 15px;
+    padding: 12px 26px 12px 26px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+form .form-control {
+    background: white;
+    border-radius: 0;
+    border-color: gainsboro;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    color: gray;
+}
+#email strong {
+    letter-spacing: 2px;
+}
+.social-list {
+    padding-left: 0;
+}
+
+.social-list li {
+    list-style: none;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 2px;
+    margin-top: 5px;
+     float: left;
+}
+.kontakt{
+    top: 155px;
+}
+/*------------------------------
+       PARALAX
+
+------------------------------*/
+
+.bg-parallax {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#about-bg-diagonal {
+    width: 50%;
+    height: 150px;
+    float: right;
+    background-image: url(../img/slikaZaParalax.jpg);
+    border-left: 200px solid #bdd1f7;
+    border-top: 525px solid transparent;
+}
+.row{
+    margin: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
