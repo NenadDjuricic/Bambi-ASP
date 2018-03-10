@@ -1,0 +1,42 @@
+﻿@model TestDataBase.Prisutnost
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Prisutnost</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dete.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dete.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DnevnikRada.OpisRada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DnevnikRada.OpisRada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidencija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Evidencija)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

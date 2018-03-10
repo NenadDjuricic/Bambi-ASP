@@ -74,11 +74,13 @@ nav.main-nav .nav-item {
   height:565px !important;
 }
 .bezPadinga{
-   padding-left: 0px;
-    padding-right: 0px;
+   padding-left: 0px !important;
+    padding-right: 0px !important;
+
 }
+
 /** drustvene mreze**/
-.socials ul{
+.socials ul {
     list-style: none;
 }
 .socials ul li{

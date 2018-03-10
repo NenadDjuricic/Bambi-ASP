@@ -22,5 +22,11 @@ namespace TestDataBase.Controllers
 
             return View();
         }
+        public ActionResult galerija()
+        {
+            ViewBag.Message = "Galerija";
+
+            return View();
+        }
     }
 }

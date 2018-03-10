@@ -1,0 +1,69 @@
+﻿@model IEnumerable<TestDataBase.Dete>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Domacinstvo.Adresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VaspitnaGrupa.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumRodjenja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JMBG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImeRoditelja)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Domacinstvo.Adresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VaspitnaGrupa.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumRodjenja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JMBG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImeRoditelja)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DeteID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DeteID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DeteID })
+        </td>
+    </tr>
+}
+
+</table>
