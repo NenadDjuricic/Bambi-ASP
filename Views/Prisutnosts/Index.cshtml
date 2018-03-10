@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.DnevnikRada.Datum)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Dete.Ime)
         </th>
         <th>
@@ -25,6 +28,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DnevnikRada.Datum)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Dete.Ime)
         </td>

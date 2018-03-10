@@ -349,6 +349,7 @@ pre{
     font-weight: 400;
     text-transform: uppercase;
 }
+}
 form .form-control {
     background: white;
     border-radius: 0;
@@ -356,7 +357,7 @@ form .form-control {
     font-size: 15px;
     font-weight: 300;
     padding: 8px 16px;
-    margin-bottom: 20px;
+    margin-bottom: 0px !important;
     color: gray;
 }
 #email strong {

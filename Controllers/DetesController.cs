@@ -15,9 +15,22 @@ namespace TestDataBase.Controllers
         private Vrtic db = new Vrtic();
 
         // GET: Detes
-        public ActionResult Index()
+        public ActionResult Index(string search , string vaspitnaGrupa)
         {
             var detes = db.Detes.Include(d => d.Domacinstvo).Include(d => d.VaspitnaGrupa);
+            if (!String.IsNullOrEmpty(search))
+            {
+                detes = detes.Where(p => p.Ime.Contains(search) ||
+                p.Prezime.Contains(search));
+                ViewBag.Search = search;
+            }
+            var VaspitnaGrupa = detes.OrderBy(p => p.VaspitnaGrupa.Naziv).Select(p =>
+            p.VaspitnaGrupa.Naziv).Distinct();
+            if (!String.IsNullOrEmpty(vaspitnaGrupa))
+            {
+                detes = detes.Where(p => p.VaspitnaGrupa.Naziv == vaspitnaGrupa);
+            }
+            ViewBag.VaspitnaGrupa = new SelectList(VaspitnaGrupa);
             return View(detes.ToList());
         }
 
