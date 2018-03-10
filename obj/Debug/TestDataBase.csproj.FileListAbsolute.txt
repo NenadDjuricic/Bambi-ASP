@@ -181,3 +181,7 @@ C:\Users\Nenad\Documents\GitHub\TestDataBase\obj\Debug\TestDataBase.csproj.CoreC
 C:\Users\Nenad\Documents\GitHub\TestDataBase\obj\Debug\TestDataBase.csproj.CopyComplete
 C:\Users\Nenad\Documents\GitHub\TestDataBase\obj\Debug\TestDataBase.dll
 C:\Users\Nenad\Documents\GitHub\TestDataBase\obj\Debug\TestDataBase.pdb
+C:\Users\Nenad\Documents\GitHub\TestDataBase\bin\PagedList.dll
+C:\Users\Nenad\Documents\GitHub\TestDataBase\bin\PagedList.Mvc.dll
+C:\Users\Nenad\Documents\GitHub\TestDataBase\bin\PagedList.xml
+C:\Users\Nenad\Documents\GitHub\TestDataBase\bin\PagedList.Mvc.xml

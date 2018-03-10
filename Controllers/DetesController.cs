@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using TestDataBase;
 
+
+
 namespace TestDataBase.Controllers
 {
     public class DetesController : Controller
@@ -17,6 +19,7 @@ namespace TestDataBase.Controllers
         // GET: Detes
         public ActionResult Index(string search , string vaspitnaGrupa)
         {
+
             var detes = db.Detes.Include(d => d.Domacinstvo).Include(d => d.VaspitnaGrupa);
             if (!String.IsNullOrEmpty(search))
             {
@@ -29,9 +32,14 @@ namespace TestDataBase.Controllers
             if (!String.IsNullOrEmpty(vaspitnaGrupa))
             {
                 detes = detes.Where(p => p.VaspitnaGrupa.Naziv == vaspitnaGrupa);
+              
             }
+           
+            
             ViewBag.VaspitnaGrupa = new SelectList(VaspitnaGrupa);
             return View(detes.ToList());
+          
+           
         }
 
         // GET: Detes/Details/5

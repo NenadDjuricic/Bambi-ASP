@@ -5,6 +5,8 @@ namespace TestDataBase
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    
+  
 
     [Table("Dete")]
     public partial class Dete
@@ -20,6 +22,8 @@ namespace TestDataBase
         [Required]
         [StringLength(20)]
         public string Ime { get; set; }
+
+ 
 
         [Required]
         [StringLength(20)]
