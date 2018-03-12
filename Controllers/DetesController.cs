@@ -64,6 +64,9 @@ namespace TestDataBase.Controllers
                 case "name_desc":
                     detes = detes.OrderBy(p => p.Ime);
                     break;
+                case "datum_opadajuce":
+                    detes = detes.OrderByDescending(p => p.DatumRodjenja);
+                    break;
                 default:
                     detes = detes.OrderBy(p => p.Ime);
                     break;
@@ -75,10 +78,10 @@ namespace TestDataBase.Controllers
             viewModel.SortBy = sortBy;
             viewModel.Sorts = new Dictionary<string, string>
             {
-            {"Name high to low", "name_desc" }
+            {"Po imenu", "name_desc" },
+            {"Datum opadajuce", "datum_opadajuce" }
             };
 
-           
             return View(viewModel);
           
            

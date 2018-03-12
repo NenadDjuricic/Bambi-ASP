@@ -8,100 +8,103 @@
 <h2 class="text-center">Spisak dece</h2>
 <p>
     @(String.IsNullOrWhiteSpace(Model.Search) ? "Showing all" : "You search for " +
-                                                        Model.Search + " found") @Model.Detes.TotalItemCount products
-                                                    </p>
-                                                    <div class="col-lg-10 col-lg-offset-5">
-                                                        <p>
-                                                            @Html.ActionLink("Dodaj dete", "Create", new { @class = "" })
+                                                                Model.Search + " found") @Model.Detes.TotalItemCount products
+                                                            </p>
+                                                            <div class="col-lg-10 col-lg-offset-5">
+                                                                <p>
+                                                                    @Html.ActionLink("Dodaj dete", "Create", new { @class = "" })
 
-                                                        </p>
-                                                    </div>
-                                                    @using (Html.BeginForm("Index", "Detes", FormMethod.Get, new
-                                                    {
-                                                        @class = "navbar-form navbar-right"
-                                                    }))
-                                                    {
-                                                        <label>Pretraga po grupi:</label> @Html.DropDownListFor(vm => vm.VaspitnaGrupa, Model.VasFilterItems, "Sve");
-                                                        <input type="submit" value="Filter" />
-                                                        <input type="hidden" name="Search" id="Search" value="@Model.Search" />
-                                                    }
-                                                    @using (Html.BeginForm("Index", "Detes", FormMethod.Get, new
-                                                    {
-                                                        @class = "navbar-form navbar-right"
-                                                    }))
-                                                    {
-                                                        <div class="form-group">
-                                                            @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Pretraga" })
-                                                        </div>
-                                                        <button type="submit" class="btn btn-default">Pretrazi</button>
-                                                    }
-                                                    <table class="table">
-                                                        <tr>
-                                                            <th>
-                                                                @Html.DisplayNameFor(model => model.Dete.First().Domacinstvo.Adresa)
-                                                            </th>
-                                                            <th>
-                                                                @Html.DisplayNameFor(model => model.Dete.First().VaspitnaGrupa.Naziv)
-                                                            </th>
-                                                            <th>
-                                                                @Html.DisplayNameFor(model => model.Dete.First().Ime)
-                                                            </th>
-                                                            <th>
-                                                                @Html.DisplayNameFor(model => model.Dete.First().Prezime)
-                                                            </th>
-                                                            <th>
-                                                                @Html.DisplayNameFor(model => model.Dete.First().DatumRodjenja)
-                                                            </th>
-                                                            <th>
-                                                                @Html.DisplayNameFor(model => model.Dete.First().JMBG)
-                                                            </th>
-                                                            <th>
-                                                                @Html.DisplayNameFor(model => model.Dete.First().ImeRoditelja)
-                                                            </th>
-                                                            <th></th>
-                                                        </tr>
+                                                                </p>
+                                                            </div>
+                                                            @using (Html.BeginForm("Index", "Detes", FormMethod.Get, new
+                                                            {
+                                                                @class = "navbar-form navbar-right"
+                                                            }))
+                                                            {
+                                                                <label>Pretraga po grupi:</label> @Html.DropDownListFor(vm => vm.VaspitnaGrupa, Model.VasFilterItems, "Sve");
+                                                                <label>Sortiraj po:</label>
+                                                                @Html.DropDownListFor(vm => vm.SortBy, new SelectList(Model.Sorts, "Value", "Key"),
+                                                                "Default")
+                                                                <input type="submit" value="Filter" />
+                                                                <input type="hidden" name="Search" id="Search" value="@Model.Search" />
+                                                            }
+                                                            @using (Html.BeginForm("Index", "Detes", FormMethod.Get, new
+                                                            {
+                                                                @class = "navbar-form navbar-right"
+                                                            }))
+                                                            {
+                                                                <div class="form-group">
+                                                                    @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Pretraga" })
+                                                                </div>
+                                                                <button type="submit" class="btn btn-default">Pretrazi</button>
+                                                            }
+                                                            <table class="table">
+                                                                <tr>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.Dete.First().Domacinstvo.Adresa)
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.Dete.First().VaspitnaGrupa.Naziv)
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.Dete.First().Ime)
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.Dete.First().Prezime)
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.Dete.First().DatumRodjenja)
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.Dete.First().JMBG)
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.DisplayNameFor(model => model.Dete.First().ImeRoditelja)
+                                                                    </th>
+                                                                    <th></th>
+                                                                </tr>
 
-                                                        @foreach (var item in Model.Detes)
-                                                        {
-                                                            <tr>
-                                                                <td>
-                                                                    @Html.DisplayFor(modelItem => item.Domacinstvo.Adresa)
-                                                                </td>
-                                                                <td>
-                                                                    @Html.DisplayFor(modelItem => item.VaspitnaGrupa.Naziv)
-                                                                </td>
-                                                                <td>
-                                                                    @Html.DisplayFor(modelItem => item.Ime)
-                                                                </td>
-                                                                <td>
-                                                                    @Html.DisplayFor(modelItem => item.Prezime)
-                                                                </td>
-                                                                <td>
-                                                                    @Html.DisplayFor(modelItem => item.DatumRodjenja)
-                                                                </td>
-                                                                <td>
-                                                                    @Html.DisplayFor(modelItem => item.JMBG)
-                                                                </td>
-                                                                <td>
-                                                                    @Html.DisplayFor(modelItem => item.ImeRoditelja)
-                                                                </td>
-                                                                <td>
-                                                                    @Html.ActionLink("Edit", "Edit", new { id = item.DeteID }) |
-                                                                    @Html.ActionLink("Details", "Details", new { id = item.DeteID }) |
-                                                                    @Html.ActionLink("Delete", "Delete", new { id = item.DeteID })
-                                                                </td>
-                                                            </tr>
-                                                        }
+                                                                @foreach (var item in Model.Detes)
+                                                                {
+                                                                    <tr>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.Domacinstvo.Adresa)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.VaspitnaGrupa.Naziv)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.Ime)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.Prezime)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.DatumRodjenja)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.JMBG)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.ImeRoditelja)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.ActionLink("Edit", "Edit", new { id = item.DeteID }) |
+                                                                            @Html.ActionLink("Details", "Details", new { id = item.DeteID }) |
+                                                                            @Html.ActionLink("Delete", "Delete", new { id = item.DeteID })
+                                                                        </td>
+                                                                    </tr>
+                                                                }
 
-                                                    </table>
-                                                    <div>
-                                                        Page @(Model.Detes.PageCount < Model.Detes.PageNumber ? 0 : Model.Detes.PageNumber) of @Model.Detes.PageCount
-                                                        @Html.PagedListPager(Model.Detes, page => Url.Action("Index",
-                                                                                     new
-                                                                                     {
-                                                                                         Search = @Model.Search,
-                                                                                         sortBy = @Model.SortBy,
+                                                            </table>
+                                                            <div>
+                                                                Page @(Model.Detes.PageCount < Model.Detes.PageNumber ? 0 : Model.Detes.PageNumber) of @Model.Detes.PageCount
+                                                                @Html.PagedListPager(Model.Detes, page => Url.Action("Index",
+                                                                                                  new
+                                                                                                  {
+                                                                                                      Search = @Model.Search,
+                                                                                                      sortBy = @Model.SortBy,
 
-                                                                                         page
-                                                                                     }))
-                                                    </div>
+                                                                                                      page
+                                                                                                  }))
+                                                            </div>
