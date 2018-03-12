@@ -36,27 +36,29 @@ namespace TestDataBase.Controllers
             var VaspitnaGrupa = detes.OrderBy(p => p.VaspitnaGrupa.Naziv).Select(p =>
             p.VaspitnaGrupa.Naziv).Distinct();
 
+            //group search results into categories and count how many items in each category
+            viewModel.VaspitnaWithCount = from matchingDetes in detes
+                                          where
+
+                                          matchingDetes.VaspitnaGrupaID != null
+                                          group matchingDetes by
+                                          matchingDetes.VaspitnaGrupa.Naziv into
+                                          vasGroup
+                                          select new VaspitnaWithCount()
+                                          {
+
+                                              VaspitnaIme = vasGroup.Key,
+                                              DecaCount = vasGroup.Count()
+
+                                          };
+
             if (!String.IsNullOrEmpty(vaspitnaGrupa))
             {
                 detes = detes.Where(p => p.VaspitnaGrupa.Naziv == vaspitnaGrupa);
                 viewModel.VaspitnaGrupa = vaspitnaGrupa;
             }
 
-            //group search results into categories and count how many items in each category
-            viewModel.VaspitnaWithCount = from matchingDetes in detes
-                                      where
-
-                                      matchingDetes.VaspitnaGrupaID != null
-                                      group matchingDetes by
-                                      matchingDetes.VaspitnaGrupa.Naziv into
-                                      vasGroup
-                                      select new VaspitnaWithCount()
-                                      {
-
-                                          VaspitnaIme = vasGroup.Key,
-                                          DecaCount = vasGroup.Count()
-
-                                      };
+            
 
             //sort the results
             switch (sortBy)
