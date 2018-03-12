@@ -6,7 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using TestDataBase;
+using PagedList;
+using TestDataBase.ViewModel;
+
 
 
 
@@ -17,27 +19,67 @@ namespace TestDataBase.Controllers
         private Vrtic db = new Vrtic();
 
         // GET: Detes
-        public ActionResult Index(string search , string vaspitnaGrupa)
+        public ActionResult Index(string search , string vaspitnaGrupa, string sortBy, int? page)
         {
+            //instantiate a new view model
+            DeteIndexViewModel viewModel = new DeteIndexViewModel();
 
+            //select the products
             var detes = db.Detes.Include(d => d.Domacinstvo).Include(d => d.VaspitnaGrupa);
+            //perform the search and save the search string to the viewModel
             if (!String.IsNullOrEmpty(search))
             {
                 detes = detes.Where(p => p.Ime.Contains(search) ||
                 p.Prezime.Contains(search));
-                ViewBag.Search = search;
+                viewModel.Search = search;
             }
             var VaspitnaGrupa = detes.OrderBy(p => p.VaspitnaGrupa.Naziv).Select(p =>
             p.VaspitnaGrupa.Naziv).Distinct();
+
             if (!String.IsNullOrEmpty(vaspitnaGrupa))
             {
                 detes = detes.Where(p => p.VaspitnaGrupa.Naziv == vaspitnaGrupa);
-              
+                viewModel.VaspitnaGrupa = vaspitnaGrupa;
             }
+
+            //group search results into categories and count how many items in each category
+            viewModel.VaspitnaWithCount = from matchingDetes in detes
+                                      where
+
+                                      matchingDetes.VaspitnaGrupaID != null
+                                      group matchingDetes by
+                                      matchingDetes.VaspitnaGrupa.Naziv into
+                                      vasGroup
+                                      select new VaspitnaWithCount()
+                                      {
+
+                                          VaspitnaIme = vasGroup.Key,
+                                          DecaCount = vasGroup.Count()
+
+                                      };
+
+            //sort the results
+            switch (sortBy)
+            {
+                case "name_desc":
+                    detes = detes.OrderBy(p => p.Ime);
+                    break;
+                default:
+                    detes = detes.OrderBy(p => p.Ime);
+                    break;
+            }
+
+            int currentPage = (page ?? 1);
            
-            
-            ViewBag.VaspitnaGrupa = new SelectList(VaspitnaGrupa);
-            return View(detes.ToList());
+            viewModel.Detes = detes.ToPagedList(currentPage, Constants.PageItems);
+            viewModel.SortBy = sortBy;
+            viewModel.Sorts = new Dictionary<string, string>
+            {
+            {"Name high to low", "name_desc" }
+            };
+
+           
+            return View(viewModel);
           
            
         }

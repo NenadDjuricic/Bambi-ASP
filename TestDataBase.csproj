@@ -199,6 +199,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Constant.cs" />
     <Compile Include="Controllers\DetesController.cs" />
     <Compile Include="Controllers\PrisutnostsController.cs" />
     <Compile Include="Models\Dete.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Models\Vaspitac.cs" />
     <Compile Include="Models\VaspitnaGrupa.cs" />
     <Compile Include="Models\Vrtic.cs" />
+    <Compile Include="ViewModels\DeteIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
