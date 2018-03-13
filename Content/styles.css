@@ -31,13 +31,11 @@ h3 span{
     background-size: cover;
 }
 /** navigacija **/
-.ff:hover{
-    background-color: #ffffff !important;
-}
-.navbar{
+
+
+.navbar {
     min-height: 0 !important;
     border: 0px !important;
-
 }
 .navigation{
     background-color: #89bef0;
