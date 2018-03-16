@@ -6,10 +6,7 @@
 }
 
 <h2 class="text-center">Spisak dece</h2>
-<p>
-    @(String.IsNullOrWhiteSpace(Model.Search) ? "Showing all" : "You search for " +
-        Model.Search + " found") @Model.Detes.TotalItemCount products
-        </p>
+
      <div class="col-lg-10 col-lg-offset-5">
          <p>
          @Html.ActionLink("Dodaj dete", "Create", new { @class = "" })
@@ -32,6 +29,10 @@
                     </div>
                     <button type="submit" class="btn btn-default">Pretrazi</button>
                  }
+                    <p>
+                        @(String.IsNullOrWhiteSpace(Model.Search) ? "Prikazano" : "You search for " +
+                Model.Search + " found") @Model.Detes.TotalItemCount dete/dece
+                    </p>
                         <table class="table">
                                  <tr>
                                           <th>
