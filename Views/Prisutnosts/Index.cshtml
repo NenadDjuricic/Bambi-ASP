@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.Evidencija)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { PrisutnostID = item.PrisutnostID, DnevnikRadaID = item.DnevnikRadaID, DeteID = item.DeteID}) |
+            @Html.ActionLink("Details", "Details", new { PrisutnostID = item.PrisutnostID, DnevnikRadaID = item.DnevnikRadaID, DeteID = item.DeteID }) |
+            @Html.ActionLink("Delete", "Delete", new { PrisutnostID = item.PrisutnostID, DnevnikRadaID = item.DnevnikRadaID, DeteID = item.DeteID })
         </td>
     </tr>
 }

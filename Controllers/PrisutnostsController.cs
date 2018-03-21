@@ -23,17 +23,16 @@ namespace TestDataBase.Controllers
         }
 
         // GET: Prisutnosts/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id , int PrisutnostID, int DnevnikRadaID , int DeteID)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Prisutnost prisutnost = db.Prisutnosts.Find(id);
+            Prisutnost prisutnost = db.Prisutnosts.Find(PrisutnostID, DnevnikRadaID);
             if (prisutnost == null)
             {
                 return HttpNotFound();
             }
+
+            ViewBag.DeteID = new SelectList(db.Detes, "DeteID", "Ime", prisutnost.DeteID);
+            ViewBag.DnevnikRadaID = new SelectList(db.DnevnikRadas, "DnevnikRadaID", "OpisRada", prisutnost.DnevnikRadaID);
             return View(prisutnost);
         }
 
@@ -65,18 +64,15 @@ namespace TestDataBase.Controllers
         }
 
         // GET: Prisutnosts/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id , int PrisutnostID, int DnevnikRadaID , int DeteID)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Prisutnost prisutnost = db.Prisutnosts.Find(id);
+            Prisutnost prisutnost = db.Prisutnosts.Find(PrisutnostID, DnevnikRadaID);
             if (prisutnost == null)
             {
                 return HttpNotFound();
-            }
-            ViewBag.DeteID = new SelectList(db.Detes, "DeteID", "Ime", prisutnost.DeteID);
+            } 
+        
+        ViewBag.DeteID = new SelectList(db.Detes, "DeteID", "Ime", prisutnost.DeteID);
             ViewBag.DnevnikRadaID = new SelectList(db.DnevnikRadas, "DnevnikRadaID", "OpisRada", prisutnost.DnevnikRadaID);
             return View(prisutnost);
         }
@@ -100,17 +96,16 @@ namespace TestDataBase.Controllers
         }
 
         // GET: Prisutnosts/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, int PrisutnostID, int DnevnikRadaID, int DeteID)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Prisutnost prisutnost = db.Prisutnosts.Find(id);
+            Prisutnost prisutnost = db.Prisutnosts.Find(PrisutnostID, DnevnikRadaID);
             if (prisutnost == null)
             {
                 return HttpNotFound();
             }
+
+            ViewBag.DeteID = new SelectList(db.Detes, "DeteID", "Ime", prisutnost.DeteID);
+            ViewBag.DnevnikRadaID = new SelectList(db.DnevnikRadas, "DnevnikRadaID", "OpisRada", prisutnost.DnevnikRadaID);
             return View(prisutnost);
         }
 
