@@ -19,6 +19,8 @@ namespace TestDataBase
 
         public int DnevnikRadaID { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime Datum { get; set; }
 
         [Required]

@@ -10,6 +10,7 @@ using TestDataBase;
 
 namespace TestDataBase.Controllers
 {
+    [Authorize]
     public class PrisutnostsController : Controller
     {
         private Vrtic db = new Vrtic();

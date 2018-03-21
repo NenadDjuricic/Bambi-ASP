@@ -103,7 +103,7 @@ namespace TestDataBase.Controllers
             }
             return View(dete);
         }
-
+        [Authorize]
         // GET: Detes/Create
         public ActionResult Create()
         {
@@ -115,6 +115,7 @@ namespace TestDataBase.Controllers
         // POST: Detes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "DeteID,Ime,Prezime,DatumRodjenja,JMBG,ImeRoditelja,DomacinstvoID,VaspitnaGrupaID")] Dete dete)
@@ -130,7 +131,7 @@ namespace TestDataBase.Controllers
             ViewBag.VaspitnaGrupaID = new SelectList(db.VaspitnaGrupas, "VaspitnaGrupaID", "Naziv", dete.VaspitnaGrupaID);
             return View(dete);
         }
-
+        [Authorize]
         // GET: Detes/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -167,6 +168,7 @@ namespace TestDataBase.Controllers
         }
 
         // GET: Detes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

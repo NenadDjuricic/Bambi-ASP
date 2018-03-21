@@ -29,6 +29,8 @@ namespace TestDataBase
         [StringLength(20)]
         public string Prezime { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime DatumRodjenja { get; set; }
 
         [Required]
