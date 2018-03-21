@@ -34,6 +34,7 @@ namespace TestDataBase
         public DateTime DatumRodjenja { get; set; }
 
         [Required]
+        [RegularExpression(@"([0-9]+)", ErrorMessage = "Mora biti broj.")]
         [StringLength(13)]
         public string JMBG { get; set; }
 
