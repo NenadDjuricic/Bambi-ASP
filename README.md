@@ -1,2 +1,0 @@
-# TestDataBase
-# Projekat za fakultet 
